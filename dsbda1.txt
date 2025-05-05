@@ -1,0 +1,75 @@
+import pandas as pd
+import numpy as np
+df = pd.read_csv("/content/IRIS.csv")
+df.head()
+
+
+
+df.dtypes
+
+
+
+from sklearn import preprocessing
+min_max_scaler = preprocessing.MinMaxScaler()
+ 
+
+
+x = df.iloc[:,:4]
+
+
+x
+
+
+x_scaled = min_max_scaler.fit_transform(x)
+
+
+
+df_normalized = pd.DataFrame(x_scaled)
+df_normalized
+
+
+df_normalized = pd.DataFrame(x_scaled)
+df_normalized
+
+
+label_encoder = preprocessing.LabelEncoder()
+df['species'] = label_encoder.fit_transform(df['species'])
+
+
+df['species'].unique()
+
+
+
+features_df = df.drop(columns=['species'])
+
+
+
+enc = preprocessing.OneHotEncoder()
+enc_df=pd.DataFrame(enc.fit_transform(df[['species']]).toarray())
+
+
+
+df_encode = features_df.join(enc_df)
+df_encode
+
+
+
+'ds-Setosa',
+1:'Iris-Versicolor',2:'Iris-virginica'}, inplace = True)
+
+
+
+df_encode
+
+
+
+from sklearn import preprocessing
+df['species'].unique()
+
+
+
+
+one_hot_df = pd.get_dummies(df, prefix="Species",
+columns=['species'], drop_first=True)
+f_encode.rename(columns = {0:'Iri
+one_hot_df

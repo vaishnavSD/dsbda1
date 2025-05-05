@@ -1,0 +1,115 @@
+import pandas as pd
+import numpy as np
+
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+dataset=pd.read_csv('/content/train.csv')
+dataset
+
+
+
+
+
+dataset.info()
+
+
+
+
+dataset.describe()
+
+
+
+dataset.dtypes
+
+
+
+
+dataset.isnull().sum()
+
+
+
+dataset=pd.read_csv('/content/train.csv')
+dataset.info()
+dataset
+
+
+
+sns.distplot(dataset['Fare'])
+
+
+
+sns.distplot(dataset['Fare'], kde=False)
+
+
+
+
+sns.distplot(dataset['Fare'], kde=False, bins=10)
+
+
+
+
+
+sns.distplot(dataset['Fare'], kde=False, bins=10)
+
+
+
+
+sns.pairplot(dataset)
+
+
+
+sns.rugplot(dataset['Fare'])
+
+
+
+
+sns.barplot(x='Sex', y='Fare', data=dataset)
+
+
+
+
+import numpy as np
+
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+sns.barplot(x='Sex', y='Age', data=dataset, estimator=np.std)
+
+
+
+
+
+sns.countplot(x='Fare', data=dataset)
+
+
+
+
+sns.countplot(x='Fare', data=dataset)
+
+
+
+sns.boxplot(x='Survived', y='Fare', data=dataset)
+
+
+
+sns.boxplot(x='Sex', y='Age', data=dataset, hue="Survived")
+
+
+
+sns.boxplot(x='Sex', y='Age', data=dataset, hue="Survived")
+
+
+
+
+sns.stripplot(x='Sex', y='Age', data=dataset)
+
+
+
+
+
+sns.histplot(data=dataset,x='Fare',y='Survived')
+
+
+
+

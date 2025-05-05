@@ -1,0 +1,65 @@
+
+import pandas as pd
+import numpy as np
+
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+dataset=pd.read_csv('/content/train.csv')
+
+dataset.head()
+
+
+
+
+
+sns.boxplot(x='Sex', y='Age', data=dataset)
+
+
+
+
+
+sns.boxplot(x='Sex', y='Age', data=dataset, hue="Survived")
+
+
+
+
+
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+from seaborn import load_dataset
+#titanic dataset
+data = pd.read_csv('/content/train.csv')
+#tips dataset
+tips = load_dataset("tips")
+
+
+
+
+
+sns.boxplot(x='Survived', y='Fare', data=dataset)
+
+
+
+
+
+sns.boxplot(x='Sex', y='Age', data=dataset)
+
+
+
+
+
+sns.boxplot(x='Sex', y='Age', data=dataset)
+
+
+
+
+
+sns.boxplot(x='Survived', y='Fare', data=dataset)
+
+
+
+
+

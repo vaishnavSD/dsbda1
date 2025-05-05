@@ -1,0 +1,130 @@
+import pandas as pandas
+
+
+import numpy as numpy
+
+
+df=pd.read_csv("/home/gescoe/Desktop/DSBDA_25B/StudentsPerformanceTest1(1).csv")
+df
+
+
+df.isnull()
+
+
+series = pd.isnull(df["math score"])
+df[series]
+
+
+
+series1 = pd.notnull(df["math score"])
+df[series1]
+
+
+
+from sklearn.preprocessing import LabelEncoder
+le = LabelEncoder()
+df['gender'] = le.fit_transform(df["gender"])
+newdf=df
+
+
+
+df
+
+
+
+
+missing_values = ["Na","na"]
+df = pd.read_csv("StudentsPerformanceTest1(1).csv", na_values = missing_values)
+df
+
+
+
+ndf = df
+ndf.fillna(0)
+
+
+
+
+m_v = df['math score'].mean()
+df['math score'].fillna(value = m_v, inplace=True)
+df
+
+
+
+me_v = df['reading score'].median()
+df['reading score'].fillna(value = me_v, inplace=True)
+df
+
+
+
+std_v = df['writing score'].std()
+df['writing score'].fillna(value  = std_v, inplace=True)
+df
+
+
+
+min_v = df['Placement Score'].min()
+df['Placement Score'].fillna(value  = min_v, inplace=True)
+df
+
+
+
+max_v = df['placement offer count'].max()
+df['placement offer count'].fillna(value  = max_v, inplace=True)
+df
+
+
+
+import pandas as pd
+import numpy as np
+
+
+
+df = pd.read_csv("/home/gescoe/Desktop/DSBDA_25B/demo1.csv")
+df
+
+
+
+pip install seaborn
+
+
+
+
+import seaborn as sns
+
+
+
+
+import pandas as pd
+import numpy as np
+
+
+
+df = pd.read_csv("/home/gescoe/Desktop/DSBDA_25B/demo1.csv")
+df
+
+
+
+col = ['math score', 'reading score', 'writing score', 'placement score']
+df.boxplot(col)
+
+
+
+import matplotlib.pyplot as plt
+
+
+
+df = pd.read_csv("/home/gescoe/Desktop/DSBDA_25B/demo1.csv")
+
+
+
+fig, ax = plt.subplots(figsize = (18,10))
+ax.scatter(df['placement score'], df['placement offer count'])
+plt.show()
+
+
+
+import matplotlib.pyplot as plt
+df['math score'].plot(kind = 'hist')
+df['log_math'] = np.log10(df['math score'])
+df['log_math'].plot(kind='hist')

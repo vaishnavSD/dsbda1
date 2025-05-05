@@ -1,0 +1,84 @@
+import pandas as pd
+
+import numpy as np
+
+df = pd.read_csv("/content/Mall_Customers.csv")
+
+df
+
+df.select_dtypes(include='number').mean()
+
+
+df.loc[:,'Age'].mean()
+
+
+df.loc[:,'CustomerID'].mean()
+
+
+df.select_dtypes(include='number').mean(axis=1)[0:4]
+
+
+df.select_dtypes(include='number').median()
+
+df.select_dtypes(include='number').median()
+
+df.loc[:,'CustomerID'].median()
+
+df.mode()
+
+df.loc[:,'CustomerID'].mode()
+
+df.loc[:,'Age'].mode()
+
+df.max()
+
+df.loc[:,'Age'].max(skipna = False)
+
+df.min()
+
+df.loc[:,'Age'].min(skipna = False)
+
+df.select_dtypes(include='number').std()
+
+df.loc[:,'Age'].std()
+
+df.loc[:,'Annual Income (k$)'].std()
+
+df.select_dtypes(include='number').std()
+
+df
+
+df.groupby(['Gender']) ['Age'].mean()
+
+df_u=df.rename(columns= {'Annual Income k$)':'Income'},inplace=False)
+
+from sklearn import preprocessing
+
+enc = preprocessing.OneHotEncoder()
+
+enc_df = pd.DataFrame(enc.fit_transform(df[['Gender']]).toarray())
+
+enc_df
+
+df_encode =df_u.join(enc_df)
+
+df_encode
+
+iris=pd.read_csv("/content/Mall_Customers.csv")
+
+df.columns = df.columns.str.lower().str.strip()
+print(df.columns)  # check for 'species' in lowercase now
+
+
+print('Iris-setosa')
+
+print(iris.columns)
+
+irisVir = (iris['gender']== 'Iris-gender')
+
+print(iris[irisVir].describe())
+
+print('Iris-virginica')
+print(iris[irisVir].describe())
+
+
